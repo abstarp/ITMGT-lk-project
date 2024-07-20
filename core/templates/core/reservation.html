@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'core/home_style.css' %}">
+    <link rel="stylesheet" href="{% static 'core/reservation_style.css' %}">
+</head>
+<body>
+    {% include 'core/header.html' %}
+    <div class="background-container">
+        <h1 class="centered-text">Select a Date Below</h1>
+        <div class="calendar-container compact">
+            <div class="calendar-header">
+                <button id="prevMonthBtn">&lt;</button>
+                <span id="monthYear"></span>
+                <button id="nextMonthBtn">&gt;</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody id="calendarBody">
+                    <!-- Calendar days will be injected here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <div id="preReservationContainer">
+            <div id="timeSelection" class="hidden">
+                <h3>Select Time</h3>
+                <button class="time-btn" data-time="10PM">10PM</button>
+                <button class="time-btn" data-time="11PM">11PM</button>
+            </div>
+            <div id="paxSelection" class="hidden">
+                <h3>Select Number of People</h3>
+                <input type="number" id="paxInput" min="4" max="10" value="4">
+                <!-- Hidden URL script -->
+                <script>
+                    const savePreReservationUrl = "{% url 'create_pre_reservation' %}";
+                    console.log("Save Pre-Reservation URL:", savePreReservationUrl);
+                </script>
+                <a href="#" id="saveReservationBtn" class="button">See Available Tables</a>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'core/reservation_scripts.js' %}"></script>
+    <script>
+        const chooseTableUrl = "{% url 'choose_table' pre_reservation_id=0 %}";
+    </script>
+</body>
+</html>

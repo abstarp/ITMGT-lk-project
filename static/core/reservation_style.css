@@ -1,0 +1,126 @@
+/* core/reservation_style.css */
+
+body {
+    background-color: black;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+/* CHANGE FONT HERE */
+body, h1, h3 {
+    font-family: Arial, sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+.background-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calendar-container {
+    margin-bottom: 20px;
+}
+
+/* Change hover shape here */
+.button, .time-btn {
+    background-color: #A0522D;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-day {
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.calendar-day:hover {
+    background-color: #A0522D;
+    color: #fff;
+}
+
+.selected-day {
+    background-color: #A0522D;
+    color: #fff;
+}
+
+.disabled-day {
+    background-color: transparent;
+    color: darkgrey;
+    pointer-events: none;
+    border-radius: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+}
+
+td {
+    cursor: pointer;
+}
+
+.selected-time {
+        background-color: #556B2F;
+            color: #fff;
+    }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content .table-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.dropdown-content .table-item:hover {
+    background-color: #A0522D;
+    color: #fff;
+}
+
+.button, .time-btn {
+    background-color: #A0522D;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+}

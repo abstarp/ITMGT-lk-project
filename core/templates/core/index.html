@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <h1>Welcome to Lan Kwai Reservation System</h1>
+    <div class="btn-group">
+        <a href="{% url 'login' %}" class="btn">Login</a>
+        <a href="{% url 'signup' %}" class="btn">Sign Up</a>
+    </div>
+</div>
+
+<script>
+    // Define a global variable with the URL for the reservation endpoint
+    var saveReservationUrl = "{{ save_reservation_url }}";
+</script>
+
+
+{% endblock %}

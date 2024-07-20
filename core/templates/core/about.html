@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="{% static 'core/about_style.css' %}">
+</head>
+<body>
+    {% include 'core/header.html' %}
+
+    <main>
+    
+        <div class="overview">
+            <ul>
+                <li><img src="{% static 'core/clock.png' %}" alt="Clock Icon"> Monday - Saturday | 11 am - 2 am</li>
+                <li><img src="{% static 'core/location.png' %}" alt="Location Icon"> 42 Esteban Abada St. Loyola Heights, Quezon City, Philippines | <a href="https://maps.app.goo.gl/c698JWdJ5EhDHMHc7?g_st=ic" target="_blank">Get directions</a></li>
+                <li><img src="{% static 'core/payment.png' %}" alt="Payment Icon"> Cash; Credit Card; Debit Card; Visa; Mastercard</li>
+                <li><img src="{% static 'core/tag.png' %}" alt="Dining Icon"> Casual Dining; Chinese; Late Night</li>
+            </ul>
+            <button class="contact-now" onclick="openModal()">Contact Now</button>
+        </div>
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.989128432343!2d121.07283853340312!3d14.641328193399597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b79290c56e23%3A0x3f5d8a991eafc38c!2s42%20Esteban%20Abada%20St%2C%20Loyola%20Heights%2C%20Quezon%20City%2C%201100%20Metro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sph!4v1613725360131!5m2!1sen!2sph" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </main>
+
+    <!-- The Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Contact Us</h2>
+            <p>Lan Kwai Speakeasy | Loyola Heights</p>
+            <p><img class="social-icon phone-icon" src="{% static 'core/phone.png' %}" alt="Phone Icon"> <a href="tel:+639175566004" class="contact-number">0917 556-6004</a>, <a href="tel:+639165137945" class="contact-number">0916 513-7945</a></p>
+            <p>Email: <a href="mailto:lankwaispeakeasy@gmail.com" class="email-link">lankwaispeakeasy@gmail.com</a></p>
+            <p>
+                <a href="https://www.instagram.com/lankwaispeakeasy/" target="_blank" class="social-link">
+                    <img class="social-icon" src="{% static 'core/ig_icon.png' %}" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/lankwaispeakeasy/" target="_blank" class="social-link">
+                    <img class="social-icon" src="{% static 'core/fb_icon.png' %}" alt="Facebook">
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("contactModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("contactModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("contactModal")) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Reservations</title>
+    <link rel="stylesheet" href="{% static 'core/home_style.css' %}">
+</head>
+<body>
+    {% include 'core/header.html' %}
+
+    <main style="background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; margin: 20px auto; width: 80%; max-width: 800px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <h1 style="background-color: rgba(255, 255, 255, 0.5); padding: 10px 20px; border-radius: 5px; color: #000;">My Upcoming Reservations</h1>
+        {% if upcoming_reservations %}
+            {% for reservation in upcoming_reservations %}
+                <div style="background-color: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 5px; margin-bottom: 20px; text-align: left; color: #000;">
+                    <h2>Reservation Details</h2>
+                    <p>Date: {{ reservation.date|date:"F j, Y" }}</p>
+                    <p>Time: {{ reservation.time }}</p>
+                    <p>Table: 
+                        {% for table in reservation.tables.all %}
+                            {{ table.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                    <p>Total Amount: PHP {{ reservation.total_amount }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>You have no upcoming reservations.</p>
+        {% endif %}
+
+        <h1 style="background-color: rgba(255, 255, 255, 0.5); padding: 10px 20px; border-radius: 5px; color: #000;">My Past Reservations</h1>
+        {% if past_reservations %}
+            {% for reservation in past_reservations %}
+                <div style="background-color: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 5px; margin-bottom: 20px; text-align: left; color: #000;">
+                    <h2>Reservation Details</h2>
+                    <p>Date: {{ reservation.date|date:"F j, Y" }}</p>
+                    <p>Time: {{ reservation.time }}</p>
+                    <p>Table: 
+                        {% for table in reservation.tables.all %}
+                            {{ table.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                    <p>Total Amount: PHP {{ reservation.total_amount }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>You have no past reservations.</p>
+        {% endif %}
+    </main>
+</body>
+</html>

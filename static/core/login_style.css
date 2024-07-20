@@ -1,0 +1,57 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url("/static/core/lkbg2.png") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.login-container h2 {
+  margin-bottom: 1em;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container form button {
+  background-color: #880400;
+  color: white;
+  padding: 0.5em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container form button:hover {
+  background-color: #880400;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 1em;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}

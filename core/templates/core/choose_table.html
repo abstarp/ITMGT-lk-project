@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose Your Table</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/choose_table.css' %}">
+    <script src="{% static 'core/choose_table_scripts.js' %}" defer></script>
+</head>
+<body>
+    <header>
+        <h1 id="pageTitle">Choose Your Table</h1>
+    </header>
+
+    <main>
+        <section id="floorPlan">
+            <!-- Dynamic content for tables will be inserted here -->
+        </section>
+        <!-- Inserted Image -->
+        <img src="{% static 'core/lk_floor.png' %}" alt="Layout" class="layout-image">
+        <section id="totalAmount">
+            Total: PHP 0.00
+        </section>
+
+        <button id="confirmBtn" class="button">Confirm Reservation</button>
+        <button id="cancelBtn" class="button">Cancel Reservation</button>
+    </main>
+
+    <!-- Optional: Include footer or additional scripts here -->
+    <script>
+        const preReservationDate = "{{ pre_reservation_date }}"; // Ensure this is in the format YYYY-MM-DD
+    </script>
+</body>
+</html>
+

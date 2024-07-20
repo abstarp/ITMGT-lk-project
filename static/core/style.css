@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url("/static/core/LKbg.png") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.main-container h1 {
+  margin-bottom: 1em;
+}
+
+.main-container .btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.main-container .btn-group a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #880400;
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.main-container .btn-group a:hover {
+  background-color: white;
+  color: #880400;
+}
